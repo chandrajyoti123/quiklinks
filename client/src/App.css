@@ -1,38 +1,133 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+
+ /* background: linear-gradient(rgba(245, 245, 245,0.1), rgba(4, 20, 43,0.4)), url(./backgroun-img.jpg); */
+background: linear-gradient();
+background-repeat: no-repeat;
+background-size: 100vw 100vh;
+
+}
+.title{
+  width: 100vw;
+  height:15vh;
+  color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 40px;
+
+}
+
+.main-contoiner{
+  width: 100vw;
+  height: 85vh;
+
+
+display: flex;
+}
+.firstrow{
+width: 50%;
+height: 100%;
+
+display: flex;
+justify-content: center;
+
+
+
+}
+.input-container{
+  width: 600px;
+  height: 400px;
+  padding: 20px 0;
+  background-color: rgba(4, 20, 43,0.7);
+  margin-top: 10px;
+  position: relative;
+
+ 
+}
+.subheading{
+  font-size: 30px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.input-feild{
+  width: 400px;
+  height: 50px;
+  font-size: 15px;
+  padding-left: 10px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 20px;
+  border: none;
+  display: flex;
+  background-color: white;
+ 
+  
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.copyimg{
+  width: 40px;
+  position: absolute;
+  right: 55px;
+  top: 220px;
+  cursor: pointer;
 }
+.input-copy-con{
+  display: flex;
+  align-items: center;
+}
+.clickbtn{
+  width: 120px;
+  font-size: 20px;
+  padding: auto;
+  margin: 0 auto;
+  display: block;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+
+}
+.secondrow{
+  background-color: rgba(4, 20, 43,0.7);
+  width: 80%;
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+}
+.secondrowheading{
+  width: 100%;
+  text-align: start;
+  font-size: 25px;
+  padding-left: 25px;
+position: sticky;
+top: 0;
+z-index: 100;
+  color: white;
+  padding-top: 10px;
+  height: 60px;
+  background-color: rgba(4, 20, 43);  
+
+}
+.ulr-card{
+  width: 90%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  margin: 20px auto;
+  padding: 10px 0 15px 0;
+
+}
+.ulr-card p{
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+  padding-left: 20px;
+  
+}  

@@ -8,6 +8,10 @@ const linkschma=new Schema({
     slug:{
         type:"String",
         
+    },
+    clicks:{
+        type:"Number",
+        default:0
     }
 }
 ,{

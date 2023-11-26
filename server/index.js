@@ -15,31 +15,67 @@ const connectMongoDB= async()=>{
 connectMongoDB();
 app.post('/links',async(req ,res)=>{
    const {url,slug}=req.body
+   const randomSlug = Math.random().toString(36).substring(2, 7);
    const newlink=new Link({
     url:url,
-    slug:slug
+    slug:slug || randomSlug
    })
+   
+   
+   
    try{
-    const savedlink=await newlink.save()
+         const savedlink=await newlink.save()
 
-    res.json({
+return res.json({
         sucess:true,
-        Link:savedlink,
+        Link:{
+            url:savedlink.url,
+            slug:savedlink.slug,
+            link:`${process.env.BASE_URL}/${savedlink.slug}`
+
+        },
         message:"url added successfully"
         
     })
    }
    catch(err){
-    res.json({
+   return res.json({
         sucess:false,
         message:err.message
     })
    }
 
 })
+app.get("/:slug", async (req, res) => {
+    const { slug } = req.params;
+    const link = await Link.findOne({ slug: slug });
+    await Link.updateOne({slug:slug},{$set:{
+        clicks:link.clicks+1
+    }})
+       if (!link) {
+        return res.json({
+            success: false,
+            message: "Link not found"
+        })
+    }
+    res.redirect(link.url);
+    
+})
+app.get('/api/links',async(req,res)=>{
+
+ 
+        const links = await Link.find({});
+    
+     res.json({
+            success: true,
+            data: links
+        })
+
+
+})
 
 const PORT=5000
 app.listen(PORT,()=>{
-       console.log(`server runing in port ${PORT}`)
+         console.log(`server runing in port ${PORT}`)
 
 })
