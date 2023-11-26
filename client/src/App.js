@@ -43,7 +43,7 @@ export default function App() {
       <div className='firstrow'>
         
         <div className='input-container'>
-        <div className='subheading'>Short Here Your Long URL</div>
+        <div className='subheading'>Short Here  Long URL</div>
         <input type='text' className='input-feild' placeholder='Enter The Link Here' value={url} onChange={(e) => {
           setUrl(e.target.value)
         }} />
